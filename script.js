@@ -649,11 +649,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     © ${new Date().getFullYear()} <strong>Aayush Panthi</strong>. 
                     All Rights Reserved
                 </p>
-                
-                <p class="credit">
-                    <strong>Designed & Developed By:</strong>
-                </p>
-                
         
             </div>
         </div>
