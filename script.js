@@ -654,10 +654,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <strong>Designed & Developed By:</strong>
                 </p>
                 
-                <a href="https://www.amritk.com.np" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   class="designer-link">Amrit Khanal</a>
+        
             </div>
         </div>
     `;
