@@ -470,7 +470,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // Blog section - UPDATED
-    Comment start here
     const initBlogSection = (moreText = "Show More Posts", lessText = "Show Less Posts") => {
         const blogPostsData = [
             {
@@ -547,7 +546,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </article>
       `).join("");
 
-            /*/* Re-apply scroll reveal to newly added blog post previews
+             Re-apply scroll reveal to newly added blog post previews
             const scrollRevealInstance = initScrollReveal(); // Get the global observer instance
             if (scrollRevealInstance && scrollRevealInstance.observer) {
                 document.querySelectorAll(".blog-posts-container .blog-post-preview.animate-on-scroll").forEach((el) => {
