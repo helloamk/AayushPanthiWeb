@@ -438,14 +438,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const hiddenItems = document.querySelectorAll(".hidden");
     let show = false;
 
-    toggleBtn.addEventListener("click", () => {
-        hiddenItems.forEach(item => {
-            item.style.display = show ? "none" : "block";
-        });
+    if (toggleBtn) {
+        toggleBtn.addEventListener("click", () => {
+            hiddenItems.forEach(item => {
+                item.style.display = show ? "none" : "block";
+            });
 
-        toggleBtn.textContent = show ? "View More" : "View Less";
-        show = !show;
-    });
+            toggleBtn.textContent = show ? "View More" : "View Less";
+            show = !show;
+        });
+    }
 
     /* Modal preview */
     const modal = document.getElementById("imageModal");
@@ -459,55 +461,27 @@ document.addEventListener("DOMContentLoaded", () => {
             const img = item.querySelector("img");
             const text = item.querySelector("p").textContent;
 
-            modal.style.display = "block";
-            modalImg.src = img.src;
-            modalText.innerText = text;
+            if (modal) modal.style.display = "block";
+            if (modalImg) modalImg.src = img.src;
+            if (modalText) modalText.innerText = text;
         });
     });
 
-    closeBtn.onclick = () => modal.style.display = "none";
-    window.onclick = e => { if (e.target == modal) modal.style.display = "none"; };
+    if (closeBtn) closeBtn.onclick = () => { if (modal) modal.style.display = "none"; };
+    window.onclick = e => { if (modal && e.target == modal) modal.style.display = "none"; };
 
 
-    // Blog section - UPDATED
+    // Blog section
     const initBlogSection = (moreText = "Show More Posts", lessText = "Show Less Posts") => {
         const blogPostsData = [
             {
                 id: "blog1",
                 title: "औद्योगिकीकरण विकाशमा  केमिकल इञ्जिनियरिङ्ग",
                 bloggerUrl: "https://chemicalengineeriginnepal.blogspot.com/2026/07/blog-post.html",
-              
-            },/*
-            {
-                id: "blog2",
-                title: "Chemical Engineering in Nepal: Opportunities and Challenges",
-                bloggerUrl: "https://eramrit.blogspot.com/2025/05/chemical-engineering-in-nepal.html",
-                previewImage: "https://bit.ly/amritkblog2",
-                snippet: "The history of chemical engineering in Nepal may be short, but its development has been promising. Originating after the Industrial Revolution, this field can significantly contribute to Nepal's pharmaceutical, food processing, cement, environmental protection, and renewable energy sectors."
-            }/* 
-            {
-                id: "blog3",
-                title: "Mastering Remote Work: Tips for Productivity",
-                bloggerUrl: "https://eramritkhanal.blogspot.com/your-remote-work-link-here",
-                previewImage: "Images/blog-placeholder-3.jpg",
-                snippet: "Practical advice and strategies to stay focused, organized, and maintain a healthy work-life balance while working from home effectively."
-            },
-           
-            {
-                id: "blog5",
-                title: "Chemical Engineering in Nepal (Copy)",
-                bloggerUrl: "https://eramrit.blogspot.com/2025/05/chemical-engineering-in-nepal.html",
-                previewImage: "https://bit.ly/amritkblog2",
-                snippet: "The history of chemical engineering in Nepal may be short, but its development has been promising. Originating after the Industrial Revolution, this field can significantly contribute to Nepal's pharmaceutical, food processing, cement, environmental protection, and renewable energy sectors."
-            },
-            {
-                id: "blog6",
-                title: "Mastering Remote Work (Copy)",
-                bloggerUrl: "https://eramritkhanal.blogspot.com/your-remote-work-link-here",
-                previewImage: "Images/blog-placeholder-3.jpg",
-                snippet: "Practical advice and strategies to stay focused, organized, and maintain a healthy work-life balance while working from home effectively."
+                previewImage: "",
+                snippet: ""
             }
-        ];/*/*
+        ];
 
         const blogPostsContainer = document.querySelector(".blog-posts-container");
         const blogModal = document.getElementById("blogModal");
@@ -525,9 +499,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const initialVisibleCount = 3;
         let visibleCount = initialVisibleCount;
         let isAllVisible = false;
-        const toggleBtn = document.querySelector("#toggleBtn");
+        const toggleBlogBtn = document.querySelector("#toggleBtn");
 
-        if (!toggleBtn) {
+        if (!toggleBlogBtn) {
             console.warn("Toggle button #toggleBtn not found! Show More/Less functionality will be disabled.");
         }
 
@@ -538,7 +512,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <article class="blog-post-preview animate-on-scroll">
           ${post.previewImage ? `<img src="${post.previewImage}" alt="${post.title} preview" class="preview-image">` : ""}
           <h3>${post.title}</h3>
-          <p class="snippet">${post.snippet}</p>
+          <p class="snippet">${post.snippet || ""}</p>
           <div class="actions">
             <button class="btn primary-btn read-more-btn" data-id="${post.id}" aria-label="Read more about ${post.title}">Read More</button>
             <a href="${post.bloggerUrl}" target="_blank" rel="noopener noreferrer" class="btn secondary-btn view-on-blogger-preview" aria-label="View ${post.title} on Blogger">View on Blogger</a>
@@ -546,7 +520,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </article>
       `).join("");
 
-             Re-apply scroll reveal to newly added blog post previews
+            // Re-apply scroll reveal to newly added blog post previews
             const scrollRevealInstance = initScrollReveal(); // Get the global observer instance
             if (scrollRevealInstance && scrollRevealInstance.observer) {
                 document.querySelectorAll(".blog-posts-container .blog-post-preview.animate-on-scroll").forEach((el) => {
@@ -554,15 +528,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             }
 
-
-            if (toggleBtn) {
-                toggleBtn.textContent = isAllVisible ? lessText : moreText;
-                toggleBtn.classList.toggle("view-less", isAllVisible);
+            if (toggleBlogBtn) {
+                toggleBlogBtn.textContent = isAllVisible ? lessText : moreText;
+                toggleBlogBtn.classList.toggle("view-less", isAllVisible);
 
                 if (blogPostsData.length <= initialVisibleCount) {
-                    toggleBtn.style.display = 'none';
+                    toggleBlogBtn.style.display = 'none';
                 } else {
-                    toggleBtn.style.display = 'inline-flex';
+                    toggleBlogBtn.style.display = 'inline-flex';
                 }
             }
         };
@@ -609,8 +582,8 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-        if (toggleBtn) {
-            toggleBtn.addEventListener("click", () => {
+        if (toggleBlogBtn) {
+            toggleBlogBtn.addEventListener("click", () => {
                 const wasAllVisible = isAllVisible;
                 isAllVisible = !isAllVisible;
                 visibleCount = isAllVisible ? blogPostsData.length : initialVisibleCount;
@@ -628,7 +601,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         displayBlogPreviews();
     };
-    End of blog section*/
 
     // Modern Footer - Improved visibility + better spacing
     const footer = document.getElementById("footer");
@@ -800,11 +772,6 @@ document.addEventListener("DOMContentLoaded", () => {
             document.head.appendChild(style);
         }
     }
-
-
-
-
-
 
     initPreloader();
     initMobileMenu();
