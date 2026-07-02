@@ -478,7 +478,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 id: "blog1",
                 title: "औद्योगिकीकरण विकाशमा  केमिकल इञ्जिनियरिङ्ग",
                 bloggerUrl: "https://aayushpanthi.blogspot.com/2026/07/blog-post.html",
-                previewImage: "",
+                previewImage: "https://photos.fife.usercontent.google.com/pw/AP1GczOJbvczM8FfAUFFV5izEGoVC99RzfK1i4SMCMeXP9LHiTYU6ZcrbVUptw=w613-h919-s-no-gm?authuser=1",
                 snippet: ""
             }
         ];
