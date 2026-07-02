@@ -477,7 +477,7 @@ document.addEventListener("DOMContentLoaded", () => {
             {
                 id: "blog1",
                 title: "औद्योगिकीकरण विकाशमा  केमिकल इञ्जिनियरिङ्ग",
-                bloggerUrl: "https://chemicalengineeriginnepal.blogspot.com/2026/07/blog-post.html",
+                bloggerUrl: "https://aayushpanthi.blogspot.com/2026/07/blog-post.html",
                 previewImage: "",
                 snippet: ""
             }
