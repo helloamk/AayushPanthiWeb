@@ -477,9 +477,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 id: "blog1",
                 title: "औद्योगिकीकरण विकाशमा  केमिकल इञ्जिनियरिङ्ग",
                 bloggerUrl: "https://chemicalengineeriginnepal.blogspot.com/2026/07/blog-post.html",
-                previewImage: "https://bit.ly/amritkblog1",
-                snippet: "Check out the best tools for chemical engineers! Use Aspen Plus and HYSYS to test ideas, AutoCAD and SolidWorks to draw designs, MATLAB, Python, and Minitab to study data, and Simulink, LabVIEW, and DeltaV to control processes. These make work easier and smarter! Great for students and experts."
-            },
+              
+            },/*
             {
                 id: "blog2",
                 title: "Chemical Engineering in Nepal: Opportunities and Challenges",
