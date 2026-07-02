@@ -470,13 +470,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // Blog section - UPDATED
-    /* Comment start here
+    Comment start here
     const initBlogSection = (moreText = "Show More Posts", lessText = "Show Less Posts") => {
         const blogPostsData = [
             {
                 id: "blog1",
-                title: "Essential Software for Chemical Engineers",
-                bloggerUrl: "https://eramrit.blogspot.com/2025/05/essential-software-for-chemical.html",
+                title: "औद्योगिकीकरण विकाशमा  केमिकल इञ्जिनियरिङ्ग",
+                bloggerUrl: "https://chemicalengineeriginnepal.blogspot.com/2026/07/blog-post.html",
                 previewImage: "https://bit.ly/amritkblog1",
                 snippet: "Check out the best tools for chemical engineers! Use Aspen Plus and HYSYS to test ideas, AutoCAD and SolidWorks to draw designs, MATLAB, Python, and Minitab to study data, and Simulink, LabVIEW, and DeltaV to control processes. These make work easier and smarter! Great for students and experts."
             },
