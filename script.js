@@ -508,7 +508,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 previewImage: "Images/blog-placeholder-3.jpg",
                 snippet: "Practical advice and strategies to stay focused, organized, and maintain a healthy work-life balance while working from home effectively."
             }
-        ];
+        ];/*/*
 
         const blogPostsContainer = document.querySelector(".blog-posts-container");
         const blogModal = document.getElementById("blogModal");
@@ -547,7 +547,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </article>
       `).join("");
 
-            // Re-apply scroll reveal to newly added blog post previews
+            /*/* Re-apply scroll reveal to newly added blog post previews
             const scrollRevealInstance = initScrollReveal(); // Get the global observer instance
             if (scrollRevealInstance && scrollRevealInstance.observer) {
                 document.querySelectorAll(".blog-posts-container .blog-post-preview.animate-on-scroll").forEach((el) => {
